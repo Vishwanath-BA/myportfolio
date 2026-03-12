@@ -451,33 +451,36 @@ export default function Home() {
                 </h2>
                 <div
                   style={{
-                    display: "flex",
-                    flexWrap: "wrap",
-                    gap: "10px",
+                    display: "grid",
+                    gridTemplateColumns: "repeat(auto-fill, minmax(140px, 1fr))",
+                    gap: "12px",
                   }}
                 >
                   {skills.map((skill, i) => (
                     <motion.div
                       key={i}
-                      initial={{ opacity: 0, scale: 0.9 }}
-                      animate={{ opacity: 1, scale: 1 }}
+                      initial={{ opacity: 0, y: 16 }}
+                      animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: i * 0.05 }}
+                      whileHover={{ y: -3, boxShadow: isDark ? "0 8px 24px rgba(0,0,0,0.4)" : "0 8px 24px rgba(0,0,0,0.08)" }}
                       style={{
                         background: card,
                         border: `1px solid ${border}`,
-                        borderRadius: "30px",
-                        padding: "8px 16px",
-                        fontSize: "13px",
-                        fontWeight: 500,
-                        color: text,
+                        borderRadius: "16px",
+                        padding: "18px 14px",
                         display: "flex",
+                        flexDirection: "column",
                         alignItems: "center",
-                        gap: "6px",
+                        justifyContent: "center",
+                        gap: "10px",
                         cursor: "default",
+                        textAlign: "center",
                       }}
                     >
-                      <span>{skill.icon}</span>
-                      <span>{skill.name}</span>
+                      <span style={{ fontSize: "28px", lineHeight: 1 }}>{skill.icon}</span>
+                      <span style={{ fontSize: "12px", fontWeight: 600, color: text, lineHeight: 1.3 }}>
+                        {skill.name}
+                      </span>
                     </motion.div>
                   ))}
                 </div>
