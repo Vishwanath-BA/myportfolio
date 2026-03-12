@@ -5,22 +5,18 @@ import {
   Grid,
   User,
   FileText,
-  Settings,
   Sun,
   Moon,
   ExternalLink,
   Mail,
   Linkedin,
   MapPin,
-  Award,
   Briefcase,
   TrendingUp,
-  Zap,
   BarChart3,
   Users,
   Target,
   ChevronRight,
-  Star,
 } from "lucide-react";
 
 type Tab = "home" | "portfolio" | "about" | "blog";
@@ -338,25 +334,50 @@ export default function Home() {
 
                 {/* Avatar */}
                 <div
-                  className="float-animation"
                   style={{
-                    width: "200px",
-                    height: "200px",
-                    borderRadius: "50%",
-                    background: "linear-gradient(135deg, #0F94FA 0%, #00D2FF 100%)",
+                    position: "relative",
+                    flexShrink: 0,
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
-                    flexShrink: 0,
-                    overflow: "hidden",
-                    boxShadow: "0 20px 60px rgba(15, 148, 250, 0.3)",
                   }}
                 >
-                  <img
-                    src="/avatar.png"
-                    alt="Vishwanath"
-                    style={{ width: "180px", height: "180px", objectFit: "cover" }}
+                  {/* Pulse ring */}
+                  <motion.div
+                    animate={{ scale: [1, 1.08, 1], opacity: [0.5, 0.15, 0.5] }}
+                    transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
+                    style={{
+                      position: "absolute",
+                      width: "270px",
+                      height: "270px",
+                      borderRadius: "50%",
+                      background: "rgba(15, 148, 250, 0.15)",
+                      zIndex: 0,
+                    }}
                   />
+                  <motion.div
+                    animate={{ y: [0, -10, 0] }}
+                    transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                    style={{
+                      width: "230px",
+                      height: "230px",
+                      borderRadius: "50%",
+                      background: "linear-gradient(135deg, #0F94FA 0%, #00C6FF 100%)",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      overflow: "hidden",
+                      boxShadow: "0 24px 80px rgba(15, 148, 250, 0.35)",
+                      zIndex: 1,
+                      position: "relative",
+                    }}
+                  >
+                    <img
+                      src="/avatar.png"
+                      alt="Vishwanath"
+                      style={{ width: "210px", height: "210px", objectFit: "cover" }}
+                    />
+                  </motion.div>
                 </div>
               </div>
 
