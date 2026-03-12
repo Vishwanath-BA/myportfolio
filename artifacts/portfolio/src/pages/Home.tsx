@@ -141,6 +141,7 @@ const certifications = [
 export default function Home() {
   const [activeTab, setActiveTab] = useState<Tab>("home");
   const [theme, setTheme] = useState<Theme>("light");
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   const isDark = theme === "dark";
 
@@ -486,48 +487,59 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* BEHIND THE SCREEN */}
+              {/* BEHIND THE SCREENS */}
               <div style={{ marginTop: "48px" }}>
+                <p style={{ color: "#0F94FA", fontSize: "13px", fontWeight: 600, marginBottom: "6px", textTransform: "uppercase", letterSpacing: "0.08em" }}>Essence</p>
                 <h2 style={{ fontSize: "22px", fontWeight: 700, marginBottom: "8px", color: text }}>
-                  Behind the screen 🖥️
+                  Behind the Screens 🖥️
                 </h2>
-                <p style={{ color: subText, fontSize: "14px", marginBottom: "20px" }}>
-                  A little about the person behind the campaigns
+                <p style={{ color: subText, fontSize: "14px", marginBottom: "24px" }}>
+                  A glimpse into my mindset, style, and marketing edge.
                 </p>
-                <div
-                  style={{
-                    display: "grid",
-                    gridTemplateColumns: "repeat(auto-fill, minmax(180px, 1fr))",
-                    gap: "12px",
-                  }}
-                >
+                <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "14px" }}>
                   {[
-                    { emoji: "📊", label: "Data Nerd", desc: "Obsessed with metrics & insights" },
-                    { emoji: "🏏", label: "Cricket Fan", desc: "Weekend warrior on the pitch" },
-                    { emoji: "☕", label: "Coffee First", desc: "Fuelled by strong filter coffee" },
-                    { emoji: "🤖", label: "AI Explorer", desc: "Early adopter of AI tools" },
-                    { emoji: "📺", label: "Content Creator", desc: "Grew a channel to 450K subs" },
-                    { emoji: "🌆", label: "Bangalore Local", desc: "Based in the Silicon Valley of India" },
+                    {
+                      emoji: "🙋",
+                      label: "Who am I?",
+                      desc: "A performance marketer who turns data into growth stories and campaigns into measurable results.",
+                      bg: isDark ? "#1E2A3A" : "#EBF5FF",
+                      accent: "#0F94FA",
+                    },
+                    {
+                      emoji: "💡",
+                      label: "My Philosophy",
+                      desc: "Every metric tells a story — I make sure it's a success story built on data, not guesswork.",
+                      bg: isDark ? "#1A2A1A" : "#EDFAF3",
+                      accent: "#10B981",
+                    },
+                    {
+                      emoji: "⚡",
+                      label: "My Distinct Edge",
+                      desc: "I bridge AI-powered automation and strategic thinking to craft campaigns that scale and convert.",
+                      bg: isDark ? "#251A35" : "#F3EEFF",
+                      accent: "#8B5CF6",
+                    },
                   ].map((item, i) => (
                     <motion.div
                       key={i}
                       initial={{ opacity: 0, y: 16 }}
                       animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: i * 0.08 }}
+                      transition={{ delay: i * 0.1 }}
                       whileHover={{ y: -4 }}
                       style={{
-                        background: card,
-                        border: `1px solid ${border}`,
-                        borderRadius: "16px",
-                        padding: "20px 16px",
+                        background: item.bg,
+                        border: `1px solid ${item.accent}30`,
+                        borderRadius: "20px",
+                        padding: "24px 20px",
                         display: "flex",
                         flexDirection: "column",
-                        gap: "8px",
+                        gap: "10px",
+                        minHeight: "160px",
                       }}
                     >
-                      <span style={{ fontSize: "28px" }}>{item.emoji}</span>
-                      <span style={{ fontSize: "13px", fontWeight: 700, color: text }}>{item.label}</span>
-                      <span style={{ fontSize: "11px", color: subText, lineHeight: 1.4 }}>{item.desc}</span>
+                      <span style={{ fontSize: "32px" }}>{item.emoji}</span>
+                      <span style={{ fontSize: "15px", fontWeight: 700, color: text }}>{item.label}</span>
+                      <span style={{ fontSize: "13px", color: subText, lineHeight: 1.5 }}>{item.desc}</span>
                     </motion.div>
                   ))}
                 </div>
@@ -535,42 +547,60 @@ export default function Home() {
 
               {/* WHY WORK WITH ME */}
               <div style={{ marginTop: "48px" }}>
+                <p style={{ color: "#0F94FA", fontSize: "13px", fontWeight: 600, marginBottom: "6px", textTransform: "uppercase", letterSpacing: "0.08em" }}>Value</p>
                 <h2 style={{ fontSize: "22px", fontWeight: 700, marginBottom: "8px", color: text }}>
-                  Why work with me? 🤝
+                  Why Work With Me? 🤝
                 </h2>
-                <p style={{ color: subText, fontSize: "14px", marginBottom: "20px" }}>
-                  What you get when you bring me on board
+                <p style={{ color: subText, fontSize: "14px", marginBottom: "24px" }}>
+                  Backed by experience, driven by purpose.
                 </p>
-                <div
-                  style={{
-                    display: "grid",
-                    gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
-                    gap: "14px",
-                  }}
-                >
+
+                {/* Stat blocks row */}
+                <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "12px", marginBottom: "14px" }}>
+                  {[
+                    { value: "4+", label: "Years of experience" },
+                    { value: "Meta & Google", label: "Ads specialist" },
+                    { value: "5+ clients", label: "Led digital teams" },
+                    { value: "AI-powered", label: "Campaign automation" },
+                  ].map((s, i) => (
+                    <div key={i} style={{
+                      background: card,
+                      border: `1px solid ${border}`,
+                      borderRadius: "16px",
+                      padding: "18px 14px",
+                      textAlign: "center",
+                    }}>
+                      <div style={{ fontSize: "16px", fontWeight: 800, color: text }}>{s.value}</div>
+                      <div style={{ fontSize: "11px", color: subText, marginTop: "4px", lineHeight: 1.3 }}>{s.label}</div>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Value cards 2x2 */}
+                <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "14px" }}>
                   {[
                     {
                       emoji: "🎯",
                       title: "ROI-First Mindset",
-                      desc: "Every campaign is measured against real business outcomes — ROAS, CPL, conversions. No vanity metrics.",
+                      desc: "Every campaign is measured against real outcomes — ROAS, CPL, conversions. No vanity metrics.",
                       color: "#0F94FA",
                     },
                     {
                       emoji: "🤖",
                       title: "AI-Powered Execution",
-                      desc: "I leverage generative AI and automation tools to move faster, personalize at scale, and cut manual work.",
+                      desc: "I use generative AI and automation to move faster, personalize at scale, and cut manual work.",
                       color: "#8B5CF6",
                     },
                     {
                       emoji: "📈",
                       title: "Proven Track Record",
-                      desc: "30% CPL reduction, 450K+ YouTube subscribers, 35%+ engagement increases — results that speak for themselves.",
+                      desc: "30% CPL reduction, 450K+ YouTube subscribers, 35%+ engagement — results that speak.",
                       color: "#10B981",
                     },
                     {
                       emoji: "🔄",
                       title: "Full-Funnel Thinking",
-                      desc: "From awareness to conversion, I design omnichannel strategies that cover every touchpoint in the customer journey.",
+                      desc: "From awareness to conversion — omnichannel strategies covering every touchpoint.",
                       color: "#F59E0B",
                     },
                   ].map((item, i) => (
@@ -587,123 +617,369 @@ export default function Home() {
                         padding: "24px 20px",
                         display: "flex",
                         flexDirection: "column",
-                        gap: "12px",
+                        gap: "10px",
                         borderTop: `3px solid ${item.color}`,
                       }}
                     >
-                      <span style={{ fontSize: "32px" }}>{item.emoji}</span>
+                      <span style={{ fontSize: "30px" }}>{item.emoji}</span>
                       <span style={{ fontSize: "15px", fontWeight: 700, color: text }}>{item.title}</span>
                       <span style={{ fontSize: "13px", color: subText, lineHeight: 1.6 }}>{item.desc}</span>
                     </motion.div>
                   ))}
                 </div>
+
+                {/* Milestone metrics row */}
+                <div style={{
+                  background: isDark ? "#111" : "#000",
+                  borderRadius: "20px",
+                  padding: "28px 32px",
+                  marginTop: "14px",
+                  display: "grid",
+                  gridTemplateColumns: "repeat(3, 1fr)",
+                  gap: "0",
+                }}>
+                  <div style={{ textAlign: "center", borderRight: "1px solid rgba(255,255,255,0.1)" }}>
+                    <div style={{ fontSize: "32px", fontWeight: 800, color: "#FFF" }}>450K+</div>
+                    <div style={{ fontSize: "12px", color: "rgba(255,255,255,0.5)", marginTop: "4px" }}>YouTube Subscribers</div>
+                  </div>
+                  <div style={{ textAlign: "center", borderRight: "1px solid rgba(255,255,255,0.1)" }}>
+                    <div style={{ fontSize: "32px", fontWeight: 800, color: "#FFF" }}>30%</div>
+                    <div style={{ fontSize: "12px", color: "rgba(255,255,255,0.5)", marginTop: "4px" }}>CPL Reduction</div>
+                  </div>
+                  <div style={{ textAlign: "center" }}>
+                    <div style={{ fontSize: "32px", fontWeight: 800, color: "#FFF" }}>35%+</div>
+                    <div style={{ fontSize: "12px", color: "rgba(255,255,255,0.5)", marginTop: "4px" }}>Engagement Increase</div>
+                  </div>
+                </div>
               </div>
 
-              {/* FEATURED WORK */}
+              {/* FEATURED WORK - Marquee scroll */}
               <div style={{ marginTop: "48px" }}>
-                <div
-                  style={{
-                    display: "flex",
-                    justifyContent: "space-between",
-                    alignItems: "center",
-                    marginBottom: "20px",
-                  }}
-                >
-                  <h2 style={{ fontSize: "22px", fontWeight: 700, color: text, margin: 0 }}>
-                    Featured Work 🚀
-                  </h2>
+                <p style={{ color: "#0F94FA", fontSize: "13px", fontWeight: 600, marginBottom: "6px", textTransform: "uppercase", letterSpacing: "0.08em" }}>Projects</p>
+                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "24px" }}>
+                  <div>
+                    <h2 style={{ fontSize: "22px", fontWeight: 700, color: text, margin: "0 0 6px" }}>
+                      Featured Work 🚀
+                    </h2>
+                    <p style={{ color: subText, fontSize: "14px", margin: 0 }}>My past campaigns showcasing my expertise.</p>
+                  </div>
                   <button
                     onClick={() => setActiveTab("portfolio")}
                     style={{
-                      background: "transparent",
-                      color: "#0F94FA",
-                      border: "none",
+                      background: isDark ? "#1A1A1A" : "#F0F0F0",
+                      color: text,
+                      border: `1px solid ${border}`,
+                      borderRadius: "22px",
+                      padding: "8px 18px",
                       fontSize: "13px",
                       fontWeight: 600,
                       cursor: "pointer",
                       display: "flex",
                       alignItems: "center",
-                      gap: "4px",
+                      gap: "6px",
+                      whiteSpace: "nowrap",
                     }}
                   >
-                    View all <ChevronRight size={14} />
+                    View All Projects <ChevronRight size={14} />
                   </button>
                 </div>
-                <div
-                  style={{
-                    display: "grid",
-                    gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
-                    gap: "16px",
-                  }}
-                >
-                  {portfolioProjects.slice(0, 2).map((p, i) => (
-                    <motion.div
+
+                {/* Marquee Row 1 */}
+                <div className="marquee-wrapper" style={{ marginBottom: "12px" }}>
+                  <div className="marquee-track">
+                    {[...portfolioProjects, ...portfolioProjects].map((p, i) => (
+                      <div
+                        key={i}
+                        style={{
+                          background: card,
+                          border: `1px solid ${border}`,
+                          borderRadius: "20px",
+                          padding: "20px",
+                          width: "260px",
+                          flexShrink: 0,
+                          marginRight: "14px",
+                        }}
+                      >
+                        <div style={{
+                          width: "44px", height: "44px", borderRadius: "12px",
+                          background: `${p.color}20`, display: "flex",
+                          alignItems: "center", justifyContent: "center",
+                          fontSize: "22px", marginBottom: "12px",
+                        }}>{p.icon}</div>
+                        <div style={{ fontSize: "14px", fontWeight: 700, color: text, marginBottom: "6px" }}>{p.title}</div>
+                        <div style={{ fontSize: "12px", color: subText, lineHeight: 1.4, marginBottom: "12px" }}>{p.description}</div>
+                        <div style={{
+                          background: `${p.color}15`, color: p.color,
+                          borderRadius: "8px", padding: "4px 10px",
+                          fontSize: "11px", fontWeight: 700, display: "inline-block",
+                        }}>📊 {p.metric}</div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Marquee Row 2 - reversed */}
+                <div className="marquee-wrapper">
+                  <div className="marquee-track-reverse">
+                    {[...portfolioProjects.slice().reverse(), ...portfolioProjects.slice().reverse()].map((p, i) => (
+                      <div
+                        key={i}
+                        style={{
+                          background: card,
+                          border: `1px solid ${border}`,
+                          borderRadius: "20px",
+                          padding: "20px",
+                          width: "260px",
+                          flexShrink: 0,
+                          marginRight: "14px",
+                        }}
+                      >
+                        <div style={{
+                          width: "44px", height: "44px", borderRadius: "12px",
+                          background: `${p.color}20`, display: "flex",
+                          alignItems: "center", justifyContent: "center",
+                          fontSize: "22px", marginBottom: "12px",
+                        }}>{p.icon}</div>
+                        <div style={{ fontSize: "14px", fontWeight: 700, color: text, marginBottom: "6px" }}>{p.title}</div>
+                        <div style={{ fontSize: "12px", color: subText, lineHeight: 1.4, marginBottom: "12px" }}>{p.description}</div>
+                        <div style={{
+                          background: `${p.color}15`, color: p.color,
+                          borderRadius: "8px", padding: "4px 10px",
+                          fontSize: "11px", fontWeight: 700, display: "inline-block",
+                        }}>📊 {p.metric}</div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              {/* FAQ SECTION */}
+              <div style={{ marginTop: "56px" }}>
+                <p style={{ color: "#0F94FA", fontSize: "13px", fontWeight: 600, marginBottom: "6px", textTransform: "uppercase", letterSpacing: "0.08em" }}>FAQ</p>
+                <h2 style={{ fontSize: "22px", fontWeight: 700, marginBottom: "8px", color: text }}>
+                  Got Questions? I Got Answers! 💬
+                </h2>
+                <p style={{ color: subText, fontSize: "14px", marginBottom: "24px" }}>
+                  Here are common questions about my experience.
+                </p>
+                <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
+                  {[
+                    {
+                      q: "What kind of work do you specialize in?",
+                      a: "I specialize in performance marketing — Meta Ads, Google Ads, and omnichannel campaigns. I focus on driving measurable results like CPL reduction, ROAS improvement, and audience growth through data-driven strategies.",
+                    },
+                    {
+                      q: "What is your campaign process?",
+                      a: "I start with audience research and goal-setting, then build creatives and targeting, launch with A/B tests, analyze performance data, and iterate rapidly to maximize ROI.",
+                    },
+                    {
+                      q: "What industries have you worked in?",
+                      a: "I've worked across new-age D2C brands, education, and media companies — managing 5+ client accounts simultaneously and scaling a YouTube channel to 450K+ subscribers.",
+                    },
+                    {
+                      q: "What are the primary tools you use?",
+                      a: "Meta Ads Manager, Google Ads, Google Analytics, WhatsApp Business API, Canva, Excel, and AI tools including ChatGPT and Generative AI platforms for automation.",
+                    },
+                    {
+                      q: "How do you approach campaign challenges?",
+                      a: "I diagnose using data first — checking CPL trends, CTR, and ROAS. Then I test hypotheses through A/B experiments on creative, audience, and bidding before scaling what works.",
+                    },
+                  ].map((faq, i) => (
+                    <div
                       key={i}
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: i * 0.1 }}
                       style={{
                         background: card,
-                        borderRadius: "20px",
-                        padding: "24px",
                         border: `1px solid ${border}`,
-                        cursor: "pointer",
-                        transition: "transform 0.2s, box-shadow 0.2s",
+                        borderRadius: "16px",
+                        overflow: "hidden",
                       }}
-                      whileHover={{ y: -4 }}
                     >
-                      <div
+                      <button
+                        onClick={() => setOpenFaq(openFaq === i ? null : i)}
                         style={{
-                          width: "48px",
-                          height: "48px",
-                          borderRadius: "12px",
-                          background: `${p.color}20`,
+                          width: "100%",
+                          background: "transparent",
+                          border: "none",
+                          padding: "18px 20px",
                           display: "flex",
+                          justifyContent: "space-between",
                           alignItems: "center",
-                          justifyContent: "center",
-                          fontSize: "24px",
-                          marginBottom: "16px",
-                        }}
-                      >
-                        {p.icon}
-                      </div>
-                      <h3
-                        style={{
-                          fontSize: "16px",
-                          fontWeight: 700,
-                          margin: "0 0 8px",
+                          cursor: "pointer",
                           color: text,
+                          textAlign: "left",
                         }}
                       >
-                        {p.title}
-                      </h3>
-                      <p
-                        style={{
+                        <span style={{ fontSize: "14px", fontWeight: 600 }}>{faq.q}</span>
+                        <span style={{
+                          fontSize: "20px",
+                          color: subText,
+                          transition: "transform 0.2s",
+                          transform: openFaq === i ? "rotate(45deg)" : "rotate(0deg)",
+                          flexShrink: 0,
+                          marginLeft: "12px",
+                          display: "inline-block",
+                        }}>+</span>
+                      </button>
+                      {openFaq === i && (
+                        <div style={{
+                          padding: "14px 20px 18px",
                           fontSize: "13px",
                           color: subText,
-                          margin: "0 0 16px",
-                          lineHeight: 1.5,
-                        }}
-                      >
-                        {p.description}
-                      </p>
-                      <div
-                        style={{
-                          background: `${p.color}15`,
-                          color: p.color,
-                          borderRadius: "8px",
-                          padding: "6px 12px",
-                          fontSize: "12px",
-                          fontWeight: 700,
-                          display: "inline-block",
-                        }}
-                      >
-                        📊 {p.metric}
+                          lineHeight: 1.6,
+                          borderTop: `1px solid ${border}`,
+                        }}>
+                          {faq.a}
+                        </div>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* BLOG PREVIEW */}
+              <div style={{ marginTop: "56px" }}>
+                <p style={{ color: "#0F94FA", fontSize: "13px", fontWeight: 600, marginBottom: "6px", textTransform: "uppercase", letterSpacing: "0.08em" }}>Blog</p>
+                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "24px" }}>
+                  <div>
+                    <h2 style={{ fontSize: "22px", fontWeight: 700, color: text, margin: "0 0 6px" }}>
+                      Insights & Ideas ✍️
+                    </h2>
+                    <p style={{ color: subText, fontSize: "14px", margin: 0 }}>Thoughts on performance marketing and growth.</p>
+                  </div>
+                  <button
+                    onClick={() => setActiveTab("blog")}
+                    style={{
+                      background: "transparent",
+                      color: text,
+                      border: `1px solid ${border}`,
+                      borderRadius: "22px",
+                      padding: "8px 18px",
+                      fontSize: "13px",
+                      fontWeight: 600,
+                      cursor: "pointer",
+                      whiteSpace: "nowrap",
+                    }}
+                  >
+                    View All Blog Posts
+                  </button>
+                </div>
+                <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "14px" }}>
+                  {[
+                    { tag: "Growth", emoji: "📺", date: "Apr 14, 2025", title: "How I Scaled to 450K Subscribers", desc: "The exact strategy, cadence, and SEO tactics that grew a channel from zero." },
+                    { tag: "Ads", emoji: "🤖", date: "Apr 7, 2025", title: "Reducing CPL by 30% with AI Ads", desc: "How AI audience segmentation dramatically cut cost-per-lead." },
+                    { tag: "Strategy", emoji: "🎯", date: "Mar 10, 2025", title: "The Omnichannel Playbook", desc: "Integrating paid, organic, and content channels for 35%+ engagement boost." },
+                  ].map((post, i) => (
+                    <motion.div
+                      key={i}
+                      initial={{ opacity: 0, y: 16 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: i * 0.1 }}
+                      whileHover={{ y: -4 }}
+                      style={{
+                        background: card,
+                        border: `1px solid ${border}`,
+                        borderRadius: "20px",
+                        overflow: "hidden",
+                        cursor: "pointer",
+                      }}
+                    >
+                      <div style={{
+                        background: isDark ? "#1A1A1A" : "#F3F4F6",
+                        height: "90px",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        fontSize: "36px",
+                      }}>{post.emoji}</div>
+                      <div style={{ padding: "16px" }}>
+                        <div style={{ display: "flex", gap: "8px", alignItems: "center", marginBottom: "10px" }}>
+                          <span style={{ background: "#0F94FA20", color: "#0F94FA", borderRadius: "6px", padding: "2px 8px", fontSize: "10px", fontWeight: 600 }}>{post.tag}</span>
+                          <span style={{ fontSize: "11px", color: subText }}>{post.date}</span>
+                        </div>
+                        <div style={{ fontSize: "13px", fontWeight: 700, color: text, marginBottom: "6px", lineHeight: 1.3 }}>{post.title}</div>
+                        <div style={{ fontSize: "12px", color: subText, lineHeight: 1.5 }}>{post.desc}</div>
                       </div>
                     </motion.div>
                   ))}
                 </div>
               </div>
+
+              {/* LET'S CONNECT CTA */}
+              <div style={{ marginTop: "56px" }}>
+                <div style={{
+                  background: isDark ? "#111" : "#000",
+                  borderRadius: "28px",
+                  padding: "56px 40px",
+                  textAlign: "center",
+                  position: "relative",
+                  overflow: "hidden",
+                }}>
+                  <div style={{
+                    position: "absolute", top: "-60px", left: "50%",
+                    transform: "translateX(-50%)",
+                    width: "300px", height: "300px",
+                    background: "radial-gradient(circle, rgba(15,148,250,0.2) 0%, transparent 70%)",
+                    pointerEvents: "none",
+                  }} />
+                  <h2 style={{ fontSize: "36px", fontWeight: 800, color: "#FFF", margin: "0 0 12px", position: "relative" }}>
+                    Let's Connect 🤝
+                  </h2>
+                  <p style={{ color: "rgba(255,255,255,0.55)", fontSize: "15px", margin: "0 0 32px", maxWidth: "480px", marginLeft: "auto", marginRight: "auto", lineHeight: 1.6, position: "relative" }}>
+                    I'm always open to new opportunities, ideas, or just a good conversation.
+                  </p>
+                  <a
+                    href="mailto:vishwavk8474@gmail.com"
+                    style={{
+                      background: "#0F94FA",
+                      color: "#FFF",
+                      borderRadius: "22px",
+                      padding: "12px 32px",
+                      fontSize: "15px",
+                      fontWeight: 700,
+                      textDecoration: "none",
+                      display: "inline-flex",
+                      alignItems: "center",
+                      gap: "8px",
+                      position: "relative",
+                    }}
+                  >
+                    <Mail size={16} /> Get in Touch
+                  </a>
+                </div>
+              </div>
+
+              {/* FOOTER */}
+              <div style={{ marginTop: "48px", marginBottom: "32px", borderTop: `1px solid ${border}`, paddingTop: "32px" }}>
+                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", flexWrap: "wrap", gap: "24px" }}>
+                  <div>
+                    <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "8px" }}>
+                      <img src="/avatar.png" alt="Vishwanath" style={{ width: "28px", height: "28px", borderRadius: "50%", objectFit: "cover" }} />
+                      <span style={{ fontWeight: 700, color: text, fontSize: "14px" }}>Vishwanath BA</span>
+                    </div>
+                    <p style={{ fontSize: "12px", color: subText, margin: 0 }}>Digital Marketing Manager</p>
+                  </div>
+                  <div style={{ display: "flex", gap: "24px", flexWrap: "wrap" }}>
+                    {["Home", "Portfolio", "About", "Blog"].map((p) => (
+                      <button key={p} onClick={() => setActiveTab(p.toLowerCase() as Tab)} style={{
+                        background: "transparent", border: "none",
+                        color: subText, fontSize: "13px", cursor: "pointer", padding: 0,
+                      }}>{p}</button>
+                    ))}
+                  </div>
+                  <div style={{ display: "flex", gap: "12px" }}>
+                    <a href="mailto:vishwavk8474@gmail.com" style={{ color: subText, display: "flex", alignItems: "center", gap: "4px", fontSize: "12px", textDecoration: "none" }}>
+                      <Mail size={14} /> Contact
+                    </a>
+                    <a href="https://linkedin.com/in/vishwavk98" target="_blank" rel="noopener noreferrer" style={{ color: subText, display: "flex", alignItems: "center", gap: "4px", fontSize: "12px", textDecoration: "none" }}>
+                      <Linkedin size={14} /> LinkedIn
+                    </a>
+                  </div>
+                </div>
+                <p style={{ textAlign: "center", color: subText, fontSize: "11px", marginTop: "28px", margin: "28px 0 0" }}>
+                  Vishwanath BA © 2025
+                </p>
+              </div>
+
             </motion.div>
           )}
 
