@@ -486,6 +486,119 @@ export default function Home() {
                 </div>
               </div>
 
+              {/* BEHIND THE SCREEN */}
+              <div style={{ marginTop: "48px" }}>
+                <h2 style={{ fontSize: "22px", fontWeight: 700, marginBottom: "8px", color: text }}>
+                  Behind the screen 🖥️
+                </h2>
+                <p style={{ color: subText, fontSize: "14px", marginBottom: "20px" }}>
+                  A little about the person behind the campaigns
+                </p>
+                <div
+                  style={{
+                    display: "grid",
+                    gridTemplateColumns: "repeat(auto-fill, minmax(180px, 1fr))",
+                    gap: "12px",
+                  }}
+                >
+                  {[
+                    { emoji: "📊", label: "Data Nerd", desc: "Obsessed with metrics & insights" },
+                    { emoji: "🏏", label: "Cricket Fan", desc: "Weekend warrior on the pitch" },
+                    { emoji: "☕", label: "Coffee First", desc: "Fuelled by strong filter coffee" },
+                    { emoji: "🤖", label: "AI Explorer", desc: "Early adopter of AI tools" },
+                    { emoji: "📺", label: "Content Creator", desc: "Grew a channel to 450K subs" },
+                    { emoji: "🌆", label: "Bangalore Local", desc: "Based in the Silicon Valley of India" },
+                  ].map((item, i) => (
+                    <motion.div
+                      key={i}
+                      initial={{ opacity: 0, y: 16 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: i * 0.08 }}
+                      whileHover={{ y: -4 }}
+                      style={{
+                        background: card,
+                        border: `1px solid ${border}`,
+                        borderRadius: "16px",
+                        padding: "20px 16px",
+                        display: "flex",
+                        flexDirection: "column",
+                        gap: "8px",
+                      }}
+                    >
+                      <span style={{ fontSize: "28px" }}>{item.emoji}</span>
+                      <span style={{ fontSize: "13px", fontWeight: 700, color: text }}>{item.label}</span>
+                      <span style={{ fontSize: "11px", color: subText, lineHeight: 1.4 }}>{item.desc}</span>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+
+              {/* WHY WORK WITH ME */}
+              <div style={{ marginTop: "48px" }}>
+                <h2 style={{ fontSize: "22px", fontWeight: 700, marginBottom: "8px", color: text }}>
+                  Why work with me? 🤝
+                </h2>
+                <p style={{ color: subText, fontSize: "14px", marginBottom: "20px" }}>
+                  What you get when you bring me on board
+                </p>
+                <div
+                  style={{
+                    display: "grid",
+                    gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
+                    gap: "14px",
+                  }}
+                >
+                  {[
+                    {
+                      emoji: "🎯",
+                      title: "ROI-First Mindset",
+                      desc: "Every campaign is measured against real business outcomes — ROAS, CPL, conversions. No vanity metrics.",
+                      color: "#0F94FA",
+                    },
+                    {
+                      emoji: "🤖",
+                      title: "AI-Powered Execution",
+                      desc: "I leverage generative AI and automation tools to move faster, personalize at scale, and cut manual work.",
+                      color: "#8B5CF6",
+                    },
+                    {
+                      emoji: "📈",
+                      title: "Proven Track Record",
+                      desc: "30% CPL reduction, 450K+ YouTube subscribers, 35%+ engagement increases — results that speak for themselves.",
+                      color: "#10B981",
+                    },
+                    {
+                      emoji: "🔄",
+                      title: "Full-Funnel Thinking",
+                      desc: "From awareness to conversion, I design omnichannel strategies that cover every touchpoint in the customer journey.",
+                      color: "#F59E0B",
+                    },
+                  ].map((item, i) => (
+                    <motion.div
+                      key={i}
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: i * 0.1 }}
+                      whileHover={{ y: -4, boxShadow: `0 12px 40px ${item.color}18` }}
+                      style={{
+                        background: card,
+                        border: `1px solid ${border}`,
+                        borderRadius: "20px",
+                        padding: "24px 20px",
+                        display: "flex",
+                        flexDirection: "column",
+                        gap: "12px",
+                        borderTop: `3px solid ${item.color}`,
+                      }}
+                    >
+                      <span style={{ fontSize: "32px" }}>{item.emoji}</span>
+                      <span style={{ fontSize: "15px", fontWeight: 700, color: text }}>{item.title}</span>
+                      <span style={{ fontSize: "13px", color: subText, lineHeight: 1.6 }}>{item.desc}</span>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+
               {/* FEATURED WORK */}
               <div style={{ marginTop: "48px" }}>
                 <div
