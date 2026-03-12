@@ -1,5 +1,10 @@
 {
   "buildCommand": "pnpm run build",
   "outputDirectory": "artifacts/portfolio/dist/public",
-  "framework": null
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
+  ]
 }
