@@ -1,0 +1,113 @@
+{
+  "colorScheme": "light",
+  "fonts": [
+    {
+      "family": "Inter Display",
+      "role": "body"
+    }
+  ],
+  "colors": {
+    "primary": "#0F94FA",
+    "accent": "#0F94FA",
+    "background": "#FFFFFF",
+    "textPrimary": "#000000",
+    "link": "#0000EE"
+  },
+  "typography": {
+    "fontFamilies": {
+      "primary": "Inter Display",
+      "heading": "Inter Display"
+    },
+    "fontStacks": {
+      "heading": [
+        "Inter Display",
+        "sans-serif"
+      ],
+      "body": [
+        "sans-serif"
+      ],
+      "paragraph": [
+        "Inter Display",
+        "sans-serif"
+      ]
+    },
+    "fontSizes": {
+      "h1": "80px",
+      "h2": "55px",
+      "body": "16px"
+    }
+  },
+  "spacing": {
+    "baseUnit": 4,
+    "borderRadius": "30px"
+  },
+  "components": {
+    "buttonPrimary": {
+      "background": "#0F94FA",
+      "textColor": "#0000EE",
+      "borderRadius": "22px",
+      "borderRadiusCorners": {
+        "topLeft": "22px",
+        "topRight": "22px",
+        "bottomRight": "22px",
+        "bottomLeft": "22px"
+      },
+      "shadow": "none"
+    }
+  },
+  "images": {
+    "logo": "File saved at: attached_assets/logo.png",
+    "favicon": "File saved at: attached_assets/favicon.png",
+    "ogImage": "File saved at: attached_assets/ogImage.png",
+    "logoHref": "File saved at: attached_assets/logoHref.html"
+  },
+  "__llm_logo_reasoning": {
+    "selectedIndex": 0,
+    "reasoning": "Selected #0 because it is visible, located in the header, and links to the homepage, matching the favicon and brand name 'Austin'.",
+    "confidence": 0.9,
+    "source": "llm"
+  },
+  "__llm_button_reasoning": {
+    "primary": {
+      "index": 0,
+      "text": "Get in Touch",
+      "reasoning": "The 'Get in Touch' button is likely the primary CTA due to its action-oriented text, suggesting direct engagement, and its vibrant brand color, which is consistent with primary CTA design."
+    },
+    "secondary": {
+      "index": -1,
+      "text": "N/A",
+      "reasoning": "All buttons share the same background color, making it impossible to select a secondary button with a different color."
+    },
+    "confidence": 0.9
+  },
+  "personality": {
+    "tone": "modern",
+    "energy": "medium",
+    "targetAudience": "creative professionals"
+  },
+  "designSystem": {
+    "framework": "custom",
+    "componentLibrary": ""
+  },
+  "confidence": {
+    "buttons": 0.9,
+    "colors": 0.95,
+    "overall": 0.925
+  },
+  "__llm_metadata": {
+    "logoSelection": {
+      "llmCalled": true,
+      "llmSucceeded": true,
+      "finalSource": "llm",
+      "rawLogoSelection": {
+        "selectedLogoIndex": 0,
+        "selectedLogoReasoning": "Selected #0 because it is visible, located in the header, and links to the homepage, matching the favicon and brand name 'Austin'.",
+        "confidence": 0.9
+      }
+    },
+    "buttonClassification": {
+      "llmCalled": true,
+      "llmSucceeded": true
+    }
+  }
+}
