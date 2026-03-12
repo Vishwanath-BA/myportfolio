@@ -275,10 +275,10 @@ export default function Home() {
                 <div style={{ flex: 1, minWidth: "260px" }}>
                   <h1
                     style={{
-                      fontSize: "clamp(36px, 6vw, 72px)",
+                      fontSize: "clamp(48px, 7vw, 80px)",
                       fontWeight: 800,
-                      lineHeight: 1.1,
-                      margin: "0 0 12px",
+                      lineHeight: 1.05,
+                      margin: "0 0 16px",
                       color: text,
                     }}
                   >
@@ -288,9 +288,9 @@ export default function Home() {
                   </h1>
                   <p
                     style={{
-                      fontSize: "16px",
+                      fontSize: "18px",
                       color: subText,
-                      margin: "0 0 24px",
+                      margin: "0 0 28px",
                       lineHeight: 1.6,
                       maxWidth: "420px",
                     }}
@@ -306,8 +306,8 @@ export default function Home() {
                         color: "#FFFFFF",
                         border: "none",
                         borderRadius: "22px",
-                        padding: "10px 22px",
-                        fontSize: "14px",
+                        padding: "12px 26px",
+                        fontSize: "16px",
                         fontWeight: 600,
                         cursor: "pointer",
                       }}
@@ -321,8 +321,8 @@ export default function Home() {
                         color: text,
                         border: `1.5px solid ${border}`,
                         borderRadius: "22px",
-                        padding: "10px 22px",
-                        fontSize: "14px",
+                        padding: "12px 26px",
+                        fontSize: "16px",
                         fontWeight: 600,
                         cursor: "pointer",
                         textDecoration: "none",
@@ -417,7 +417,7 @@ export default function Home() {
                     </div>
                     <div
                       style={{
-                        fontSize: "28px",
+                        fontSize: "45px",
                         fontWeight: 800,
                         color: "#0F94FA",
                         lineHeight: 1,
@@ -427,9 +427,9 @@ export default function Home() {
                     </div>
                     <div
                       style={{
-                        fontSize: "12px",
+                        fontSize: "14px",
                         color: subText,
-                        marginTop: "4px",
+                        marginTop: "6px",
                       }}
                     >
                       {s.label}
@@ -442,7 +442,7 @@ export default function Home() {
               <div style={{ marginTop: "48px" }}>
                 <h2
                   style={{
-                    fontSize: "22px",
+                    fontSize: "30px",
                     fontWeight: 700,
                     marginBottom: "20px",
                     color: text,
@@ -478,8 +478,8 @@ export default function Home() {
                         textAlign: "center",
                       }}
                     >
-                      <span style={{ fontSize: "28px", lineHeight: 1 }}>{skill.icon}</span>
-                      <span style={{ fontSize: "12px", fontWeight: 600, color: text, lineHeight: 1.3 }}>
+                      <span style={{ fontSize: "34px", lineHeight: 1 }}>{skill.icon}</span>
+                      <span style={{ fontSize: "13px", fontWeight: 600, color: text, lineHeight: 1.3 }}>
                         {skill.name}
                       </span>
                     </motion.div>
@@ -489,11 +489,11 @@ export default function Home() {
 
               {/* BEHIND THE SCREENS */}
               <div style={{ marginTop: "48px" }}>
-                <p style={{ color: "#0F94FA", fontSize: "13px", fontWeight: 600, marginBottom: "6px", textTransform: "uppercase", letterSpacing: "0.08em" }}>Essence</p>
-                <h2 style={{ fontSize: "22px", fontWeight: 700, marginBottom: "8px", color: text }}>
+                <p style={{ color: "#0F94FA", fontSize: "12px", fontWeight: 600, marginBottom: "6px", textTransform: "uppercase", letterSpacing: "0.1em" }}>Essence</p>
+                <h2 style={{ fontSize: "30px", fontWeight: 700, marginBottom: "8px", color: text }}>
                   Behind the Screens 🖥️
                 </h2>
-                <p style={{ color: subText, fontSize: "14px", marginBottom: "24px" }}>
+                <p style={{ color: subText, fontSize: "16px", marginBottom: "24px" }}>
                   A glimpse into my mindset, style, and marketing edge.
                 </p>
                 <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "14px" }}>
@@ -537,9 +537,9 @@ export default function Home() {
                         minHeight: "160px",
                       }}
                     >
-                      <span style={{ fontSize: "32px" }}>{item.emoji}</span>
-                      <span style={{ fontSize: "15px", fontWeight: 700, color: text }}>{item.label}</span>
-                      <span style={{ fontSize: "13px", color: subText, lineHeight: 1.5 }}>{item.desc}</span>
+                      <span style={{ fontSize: "36px" }}>{item.emoji}</span>
+                      <span style={{ fontSize: "18px", fontWeight: 700, color: text }}>{item.label}</span>
+                      <span style={{ fontSize: "16px", color: subText, lineHeight: 1.5 }}>{item.desc}</span>
                     </motion.div>
                   ))}
                 </div>
@@ -547,11 +547,11 @@ export default function Home() {
 
               {/* WHY WORK WITH ME */}
               <div style={{ marginTop: "48px" }}>
-                <p style={{ color: "#0F94FA", fontSize: "13px", fontWeight: 600, marginBottom: "6px", textTransform: "uppercase", letterSpacing: "0.08em" }}>Value</p>
-                <h2 style={{ fontSize: "22px", fontWeight: 700, marginBottom: "8px", color: text }}>
+                <p style={{ color: "#0F94FA", fontSize: "12px", fontWeight: 600, marginBottom: "6px", textTransform: "uppercase", letterSpacing: "0.1em" }}>Value</p>
+                <h2 style={{ fontSize: "30px", fontWeight: 700, marginBottom: "8px", color: text }}>
                   Why Work With Me? 🤝
                 </h2>
-                <p style={{ color: subText, fontSize: "14px", marginBottom: "24px" }}>
+                <p style={{ color: subText, fontSize: "16px", marginBottom: "24px" }}>
                   Backed by experience, driven by purpose.
                 </p>
 
@@ -570,8 +570,8 @@ export default function Home() {
                       padding: "18px 14px",
                       textAlign: "center",
                     }}>
-                      <div style={{ fontSize: "16px", fontWeight: 800, color: text }}>{s.value}</div>
-                      <div style={{ fontSize: "11px", color: subText, marginTop: "4px", lineHeight: 1.3 }}>{s.label}</div>
+                      <div style={{ fontSize: "18px", fontWeight: 800, color: text }}>{s.value}</div>
+                      <div style={{ fontSize: "13px", color: subText, marginTop: "4px", lineHeight: 1.3 }}>{s.label}</div>
                     </div>
                   ))}
                 </div>
@@ -621,9 +621,9 @@ export default function Home() {
                         borderTop: `3px solid ${item.color}`,
                       }}
                     >
-                      <span style={{ fontSize: "30px" }}>{item.emoji}</span>
-                      <span style={{ fontSize: "15px", fontWeight: 700, color: text }}>{item.title}</span>
-                      <span style={{ fontSize: "13px", color: subText, lineHeight: 1.6 }}>{item.desc}</span>
+                      <span style={{ fontSize: "36px" }}>{item.emoji}</span>
+                      <span style={{ fontSize: "18px", fontWeight: 700, color: text }}>{item.title}</span>
+                      <span style={{ fontSize: "16px", color: subText, lineHeight: 1.6 }}>{item.desc}</span>
                     </motion.div>
                   ))}
                 </div>
@@ -639,29 +639,29 @@ export default function Home() {
                   gap: "0",
                 }}>
                   <div style={{ textAlign: "center", borderRight: "1px solid rgba(255,255,255,0.1)" }}>
-                    <div style={{ fontSize: "32px", fontWeight: 800, color: "#FFF" }}>450K+</div>
-                    <div style={{ fontSize: "12px", color: "rgba(255,255,255,0.5)", marginTop: "4px" }}>YouTube Subscribers</div>
+                    <div style={{ fontSize: "45px", fontWeight: 800, color: "#FFF" }}>450K+</div>
+                    <div style={{ fontSize: "14px", color: "rgba(255,255,255,0.5)", marginTop: "6px" }}>YouTube Subscribers</div>
                   </div>
                   <div style={{ textAlign: "center", borderRight: "1px solid rgba(255,255,255,0.1)" }}>
-                    <div style={{ fontSize: "32px", fontWeight: 800, color: "#FFF" }}>30%</div>
-                    <div style={{ fontSize: "12px", color: "rgba(255,255,255,0.5)", marginTop: "4px" }}>CPL Reduction</div>
+                    <div style={{ fontSize: "45px", fontWeight: 800, color: "#FFF" }}>30%</div>
+                    <div style={{ fontSize: "14px", color: "rgba(255,255,255,0.5)", marginTop: "6px" }}>CPL Reduction</div>
                   </div>
                   <div style={{ textAlign: "center" }}>
-                    <div style={{ fontSize: "32px", fontWeight: 800, color: "#FFF" }}>35%+</div>
-                    <div style={{ fontSize: "12px", color: "rgba(255,255,255,0.5)", marginTop: "4px" }}>Engagement Increase</div>
+                    <div style={{ fontSize: "45px", fontWeight: 800, color: "#FFF" }}>35%+</div>
+                    <div style={{ fontSize: "14px", color: "rgba(255,255,255,0.5)", marginTop: "6px" }}>Engagement Increase</div>
                   </div>
                 </div>
               </div>
 
               {/* FEATURED WORK - Marquee scroll */}
               <div style={{ marginTop: "48px" }}>
-                <p style={{ color: "#0F94FA", fontSize: "13px", fontWeight: 600, marginBottom: "6px", textTransform: "uppercase", letterSpacing: "0.08em" }}>Projects</p>
+                <p style={{ color: "#0F94FA", fontSize: "12px", fontWeight: 600, marginBottom: "6px", textTransform: "uppercase", letterSpacing: "0.1em" }}>Projects</p>
                 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "24px" }}>
                   <div>
-                    <h2 style={{ fontSize: "22px", fontWeight: 700, color: text, margin: "0 0 6px" }}>
+                    <h2 style={{ fontSize: "30px", fontWeight: 700, color: text, margin: "0 0 8px" }}>
                       Featured Work 🚀
                     </h2>
-                    <p style={{ color: subText, fontSize: "14px", margin: 0 }}>My past campaigns showcasing my expertise.</p>
+                    <p style={{ color: subText, fontSize: "16px", margin: 0 }}>My past campaigns showcasing my expertise.</p>
                   </div>
                   <button
                     onClick={() => setActiveTab("portfolio")}
@@ -704,14 +704,14 @@ export default function Home() {
                           width: "44px", height: "44px", borderRadius: "12px",
                           background: `${p.color}20`, display: "flex",
                           alignItems: "center", justifyContent: "center",
-                          fontSize: "22px", marginBottom: "12px",
+                          fontSize: "24px", marginBottom: "12px",
                         }}>{p.icon}</div>
-                        <div style={{ fontSize: "14px", fontWeight: 700, color: text, marginBottom: "6px" }}>{p.title}</div>
-                        <div style={{ fontSize: "12px", color: subText, lineHeight: 1.4, marginBottom: "12px" }}>{p.description}</div>
+                        <div style={{ fontSize: "16px", fontWeight: 700, color: text, marginBottom: "6px" }}>{p.title}</div>
+                        <div style={{ fontSize: "14px", color: subText, lineHeight: 1.4, marginBottom: "12px" }}>{p.description}</div>
                         <div style={{
                           background: `${p.color}15`, color: p.color,
                           borderRadius: "8px", padding: "4px 10px",
-                          fontSize: "11px", fontWeight: 700, display: "inline-block",
+                          fontSize: "12px", fontWeight: 700, display: "inline-block",
                         }}>📊 {p.metric}</div>
                       </div>
                     ))}
@@ -738,14 +738,14 @@ export default function Home() {
                           width: "44px", height: "44px", borderRadius: "12px",
                           background: `${p.color}20`, display: "flex",
                           alignItems: "center", justifyContent: "center",
-                          fontSize: "22px", marginBottom: "12px",
+                          fontSize: "24px", marginBottom: "12px",
                         }}>{p.icon}</div>
-                        <div style={{ fontSize: "14px", fontWeight: 700, color: text, marginBottom: "6px" }}>{p.title}</div>
-                        <div style={{ fontSize: "12px", color: subText, lineHeight: 1.4, marginBottom: "12px" }}>{p.description}</div>
+                        <div style={{ fontSize: "16px", fontWeight: 700, color: text, marginBottom: "6px" }}>{p.title}</div>
+                        <div style={{ fontSize: "14px", color: subText, lineHeight: 1.4, marginBottom: "12px" }}>{p.description}</div>
                         <div style={{
                           background: `${p.color}15`, color: p.color,
                           borderRadius: "8px", padding: "4px 10px",
-                          fontSize: "11px", fontWeight: 700, display: "inline-block",
+                          fontSize: "12px", fontWeight: 700, display: "inline-block",
                         }}>📊 {p.metric}</div>
                       </div>
                     ))}
@@ -755,11 +755,11 @@ export default function Home() {
 
               {/* FAQ SECTION */}
               <div style={{ marginTop: "56px" }}>
-                <p style={{ color: "#0F94FA", fontSize: "13px", fontWeight: 600, marginBottom: "6px", textTransform: "uppercase", letterSpacing: "0.08em" }}>FAQ</p>
-                <h2 style={{ fontSize: "22px", fontWeight: 700, marginBottom: "8px", color: text }}>
+                <p style={{ color: "#0F94FA", fontSize: "12px", fontWeight: 600, marginBottom: "6px", textTransform: "uppercase", letterSpacing: "0.1em" }}>FAQ</p>
+                <h2 style={{ fontSize: "30px", fontWeight: 700, marginBottom: "8px", color: text }}>
                   Got Questions? I Got Answers! 💬
                 </h2>
-                <p style={{ color: subText, fontSize: "14px", marginBottom: "24px" }}>
+                <p style={{ color: subText, fontSize: "16px", marginBottom: "24px" }}>
                   Here are common questions about my experience.
                 </p>
                 <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
@@ -809,7 +809,7 @@ export default function Home() {
                           textAlign: "left",
                         }}
                       >
-                        <span style={{ fontSize: "14px", fontWeight: 600 }}>{faq.q}</span>
+                        <span style={{ fontSize: "16px", fontWeight: 600 }}>{faq.q}</span>
                         <span style={{
                           fontSize: "20px",
                           color: subText,
@@ -823,7 +823,7 @@ export default function Home() {
                       {openFaq === i && (
                         <div style={{
                           padding: "14px 20px 18px",
-                          fontSize: "13px",
+                          fontSize: "16px",
                           color: subText,
                           lineHeight: 1.6,
                           borderTop: `1px solid ${border}`,
@@ -838,13 +838,13 @@ export default function Home() {
 
               {/* BLOG PREVIEW */}
               <div style={{ marginTop: "56px" }}>
-                <p style={{ color: "#0F94FA", fontSize: "13px", fontWeight: 600, marginBottom: "6px", textTransform: "uppercase", letterSpacing: "0.08em" }}>Blog</p>
+                <p style={{ color: "#0F94FA", fontSize: "12px", fontWeight: 600, marginBottom: "6px", textTransform: "uppercase", letterSpacing: "0.1em" }}>Blog</p>
                 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "24px" }}>
                   <div>
-                    <h2 style={{ fontSize: "22px", fontWeight: 700, color: text, margin: "0 0 6px" }}>
+                    <h2 style={{ fontSize: "30px", fontWeight: 700, color: text, margin: "0 0 8px" }}>
                       Insights & Ideas ✍️
                     </h2>
-                    <p style={{ color: subText, fontSize: "14px", margin: 0 }}>Thoughts on performance marketing and growth.</p>
+                    <p style={{ color: subText, fontSize: "16px", margin: 0 }}>Thoughts on performance marketing and growth.</p>
                   </div>
                   <button
                     onClick={() => setActiveTab("blog")}
@@ -893,11 +893,11 @@ export default function Home() {
                       }}>{post.emoji}</div>
                       <div style={{ padding: "16px" }}>
                         <div style={{ display: "flex", gap: "8px", alignItems: "center", marginBottom: "10px" }}>
-                          <span style={{ background: "#0F94FA20", color: "#0F94FA", borderRadius: "6px", padding: "2px 8px", fontSize: "10px", fontWeight: 600 }}>{post.tag}</span>
-                          <span style={{ fontSize: "11px", color: subText }}>{post.date}</span>
+                          <span style={{ background: "#0F94FA20", color: "#0F94FA", borderRadius: "6px", padding: "2px 8px", fontSize: "12px", fontWeight: 600 }}>{post.tag}</span>
+                          <span style={{ fontSize: "12px", color: subText }}>{post.date}</span>
                         </div>
-                        <div style={{ fontSize: "13px", fontWeight: 700, color: text, marginBottom: "6px", lineHeight: 1.3 }}>{post.title}</div>
-                        <div style={{ fontSize: "12px", color: subText, lineHeight: 1.5 }}>{post.desc}</div>
+                        <div style={{ fontSize: "16px", fontWeight: 700, color: text, marginBottom: "6px", lineHeight: 1.3 }}>{post.title}</div>
+                        <div style={{ fontSize: "14px", color: subText, lineHeight: 1.5 }}>{post.desc}</div>
                       </div>
                     </motion.div>
                   ))}
@@ -921,10 +921,10 @@ export default function Home() {
                     background: "radial-gradient(circle, rgba(15,148,250,0.2) 0%, transparent 70%)",
                     pointerEvents: "none",
                   }} />
-                  <h2 style={{ fontSize: "36px", fontWeight: 800, color: "#FFF", margin: "0 0 12px", position: "relative" }}>
+                  <h2 style={{ fontSize: "45px", fontWeight: 800, color: "#FFF", margin: "0 0 16px", position: "relative" }}>
                     Let's Connect 🤝
                   </h2>
-                  <p style={{ color: "rgba(255,255,255,0.55)", fontSize: "15px", margin: "0 0 32px", maxWidth: "480px", marginLeft: "auto", marginRight: "auto", lineHeight: 1.6, position: "relative" }}>
+                  <p style={{ color: "rgba(255,255,255,0.55)", fontSize: "18px", margin: "0 auto 36px", maxWidth: "480px", lineHeight: 1.6, position: "relative" }}>
                     I'm always open to new opportunities, ideas, or just a good conversation.
                   </p>
                   <a
@@ -933,8 +933,8 @@ export default function Home() {
                       background: "#0F94FA",
                       color: "#FFF",
                       borderRadius: "22px",
-                      padding: "12px 32px",
-                      fontSize: "15px",
+                      padding: "14px 36px",
+                      fontSize: "16px",
                       fontWeight: 700,
                       textDecoration: "none",
                       display: "inline-flex",
@@ -943,7 +943,7 @@ export default function Home() {
                       position: "relative",
                     }}
                   >
-                    <Mail size={16} /> Get in Touch
+                    <Mail size={18} /> Get in Touch
                   </a>
                 </div>
               </div>
